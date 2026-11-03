@@ -1,0 +1,750 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #21030b;
+}
+
+.wedding-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+  overflow: hidden;
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #7c1730,
+      #350714 65%,
+      #170107
+    );
+}
+
+/* Floating petals */
+
+.petal-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  font-size: 22px;
+}
+
+/* Invitation Card */
+
+.invitation-card {
+  width: 100%;
+  max-width: 480px;
+  min-height: 720px;
+  position: relative;
+  z-index: 2;
+
+  perspective: 1500px;
+
+  box-shadow:
+    0 0 30px rgba(255, 215, 0, 0.25),
+    0 0 80px rgba(255, 0, 80, 0.15);
+}
+
+/* Cover */
+
+.cover-page {
+  width: 100%;
+  min-height: 720px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #800020,
+      #4b0015,
+      #250008
+    );
+
+  border: 3px solid #d4af37;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 15px;
+}
+
+/* Golden frame */
+
+.gold-border {
+  width: 100%;
+  min-height: 680px;
+
+  border: 2px solid #e6c76a;
+  border-radius: 8px;
+
+  outline: 1px solid rgba(255, 215, 0, 0.4);
+  outline-offset: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  text-align: center;
+  padding: 20px;
+}
+
+/* Om symbol */
+
+.om-symbol {
+  font-size: 65px;
+  color: #ffd700;
+  font-family: serif;
+}
+
+/* Typography */
+
+.blessing {
+  color: #ffe8a3;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.invitation-heading {
+  color: #ffd700;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 5px;
+}
+
+.cover-title {
+  color: #ffe7a0;
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  font-weight: 400;
+
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.cover-subtitle {
+  color: #f8dca0;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Shiva Parvati Image */
+
+.god-image {
+  width: 100%;
+  height: 320px;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  border: 2px solid #d4af37;
+
+  box-shadow:
+    0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+.god-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  animation: divineZoom 8s ease-in-out infinite alternate;
+}
+
+@keyframes divineZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.12);
+  }
+}
+
+/* Open button */
+
+.open-button {
+  background: linear-gradient(
+    135deg,
+    #ffe8a0,
+    #d4af37,
+    #fff1b5
+  );
+
+  color: #5a0015;
+
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Inside page */
+
+.inside-page {
+  width: 100%;
+  min-height: 720px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff5dc,
+      #f7e4b8,
+      #fff8e8
+    );
+
+  border: 3px solid #d4af37;
+  border-radius: 12px;
+
+  padding: 15px;
+}
+
+.inside-border {
+  min-height: 680px;
+
+  border: 2px solid #b8860b;
+  border-radius: 8px;
+
+  padding: 25px 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+/* Couple names */
+
+.welcome {
+  font-family: 'Playfair Display', serif;
+  color: #6b001b;
+  font-size: 18px;
+}
+
+.couple-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 65px;
+  font-weight: 400;
+
+  color: #800020;
+
+  text-shadow: 0 2px 5px rgba(128, 0, 32, 0.15);
+}
+
+.and-symbol {
+  color: #b8860b;
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+}
+
+.marriage-text {
+  color: #5b2430;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 330px;
+}
+
+.divider {
+  color: #b8860b;
+  font-size: 25px;
+  margin: 10px;
+}
+
+/* Event details */
+
+.event-title {
+  color: #800020;
+  font-family: 'Cinzel', serif;
+  font-size: 19px;
+}
+
+.event-details {
+  color: #5b2430;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  margin: 8px;
+}
+
+.venue {
+  color: #800020;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* Buttons */
+
+.map-button,
+.rsvp-button {
+  text-decoration: none;
+
+  background: linear-gradient(
+    135deg,
+    #800020,
+    #b8860b
+  );
+
+  color: #fff4d2;
+
+  border: none;
+  border-radius: 30px;
+
+  padding: 12px 25px;
+  margin: 8px;
+
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.rsvp-message {
+  color: #800020;
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+}
+
+.closing {
+  color: #800020;
+  font-family: 'Great Vibes', cursive;
+  font-size: 25px;
+}
+
+.back-button {
+  background: transparent;
+  color: #800020;
+
+  border: 1px solid #b8860b;
+  border-radius: 20px;
+
+  padding: 8px 20px;
+
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 500px) {
+  .invitation-card {
+    max-width: 100%;
+  }
+
+  .cover-title {
+    font-size: 40px;
+  }
+
+  .god-image {
+    height: 280px;
+  }
+
+  .couple-name {
+    font-size: 55px;
+  }
+
+  .inside-border {
+    padding: 20px 10px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #21030b;
+}
+
+.wedding-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+  overflow: hidden;
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #7c1730,
+      #350714 65%,
+      #170107
+    );
+}
+
+/* Floating petals */
+
+.petal-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  font-size: 22px;
+}
+
+/* Invitation Card */
+
+.invitation-card {
+  width: 100%;
+  max-width: 480px;
+  min-height: 720px;
+  position: relative;
+  z-index: 2;
+
+  perspective: 1500px;
+
+  box-shadow:
+    0 0 30px rgba(255, 215, 0, 0.25),
+    0 0 80px rgba(255, 0, 80, 0.15);
+}
+
+/* Cover */
+
+.cover-page {
+  width: 100%;
+  min-height: 720px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #800020,
+      #4b0015,
+      #250008
+    );
+
+  border: 3px solid #d4af37;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 15px;
+}
+
+/* Golden frame */
+
+.gold-border {
+  width: 100%;
+  min-height: 680px;
+
+  border: 2px solid #e6c76a;
+  border-radius: 8px;
+
+  outline: 1px solid rgba(255, 215, 0, 0.4);
+  outline-offset: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  text-align: center;
+  padding: 20px;
+}
+
+/* Om symbol */
+
+.om-symbol {
+  font-size: 65px;
+  color: #ffd700;
+  font-family: serif;
+}
+
+/* Typography */
+
+.blessing {
+  color: #ffe8a3;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.invitation-heading {
+  color: #ffd700;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 5px;
+}
+
+.cover-title {
+  color: #ffe7a0;
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  font-weight: 400;
+
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.cover-subtitle {
+  color: #f8dca0;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Shiva Parvati Image */
+
+.god-image {
+  width: 100%;
+  height: 320px;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  border: 2px solid #d4af37;
+
+  box-shadow:
+    0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+.god-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  animation: divineZoom 8s ease-in-out infinite alternate;
+}
+
+@keyframes divineZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.12);
+  }
+}
+
+/* Open button */
+
+.open-button {
+  background: linear-gradient(
+    135deg,
+    #ffe8a0,
+    #d4af37,
+    #fff1b5
+  );
+
+  color: #5a0015;
+
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Inside page */
+
+.inside-page {
+  width: 100%;
+  min-height: 720px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff5dc,
+      #f7e4b8,
+      #fff8e8
+    );
+
+  border: 3px solid #d4af37;
+  border-radius: 12px;
+
+  padding: 15px;
+}
+
+.inside-border {
+  min-height: 680px;
+
+  border: 2px solid #b8860b;
+  border-radius: 8px;
+
+  padding: 25px 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+/* Couple names */
+
+.welcome {
+  font-family: 'Playfair Display', serif;
+  color: #6b001b;
+  font-size: 18px;
+}
+
+.couple-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 65px;
+  font-weight: 400;
+
+  color: #800020;
+
+  text-shadow: 0 2px 5px rgba(128, 0, 32, 0.15);
+}
+
+.and-symbol {
+  color: #b8860b;
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+}
+
+.marriage-text {
+  color: #5b2430;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 330px;
+}
+
+.divider {
+  color: #b8860b;
+  font-size: 25px;
+  margin: 10px;
+}
+
+/* Event details */
+
+.event-title {
+  color: #800020;
+  font-family: 'Cinzel', serif;
+  font-size: 19px;
+}
+
+.event-details {
+  color: #5b2430;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  margin: 8px;
+}
+
+.venue {
+  color: #800020;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* Buttons */
+
+.map-button,
+.rsvp-button {
+  text-decoration: none;
+
+  background: linear-gradient(
+    135deg,
+    #800020,
+    #b8860b
+  );
+
+  color: #fff4d2;
+
+  border: none;
+  border-radius: 30px;
+
+  padding: 12px 25px;
+  margin: 8px;
+
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.rsvp-message {
+  color: #800020;
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+}
+
+.closing {
+  color: #800020;
+  font-family: 'Great Vibes', cursive;
+  font-size: 25px;
+}
+
+.back-button {
+  background: transparent;
+  color: #800020;
+
+  border: 1px solid #b8860b;
+  border-radius: 20px;
+
+  padding: 8px 20px;
+
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 500px) {
+  .invitation-card {
+    max-width: 100%;
+  }
+
+  .cover-title {
+    font-size: 40px;
+  }
+
+  .god-image {
+    height: 280px;
+  }
+
+  .couple-name {
+    font-size: 55px;
+  }
+
+  .inside-border {
+    padding: 20px 10px;
+  }
+}

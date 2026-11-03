@@ -1,0 +1,241 @@
+
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import "./wedding.css";
+
+export default function WeddingInvitation() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [rsvp, setRsvp] = useState(false);
+
+  const petals = Array.from({ length: 20 });
+
+  return (
+    <main className="wedding-page">
+
+      {/* Floating flower petals */}
+      <div className="petal-container">
+        {petals.map((_, i) => (
+          <motion.div
+            key={i}
+            className="petal"
+            initial={{
+              y: -100,
+              x: Math.random() * 1000,
+              opacity: 0,
+            }}
+            animate={{
+              y: "110vh",
+              rotate: 360,
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 8 + Math.random() * 8,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+          >
+            🌸
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        className="invitation-card"
+        initial={{ scale: 0.7, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      >
+
+        {/* Divine Front Cover */}
+        <AnimatePresence mode="wait">
+
+          {!isOpen ? (
+            <motion.div
+              key="cover"
+              className="cover-page"
+              exit={{
+                rotateY: -100,
+                opacity: 0,
+              }}
+              transition={{ duration: 1.2 }}
+            >
+
+              <div className="gold-border">
+
+                <motion.div
+                  className="om-symbol"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    textShadow: [
+                      "0 0 10px gold",
+                      "0 0 30px gold",
+                      "0 0 10px gold",
+                    ],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                  }}
+                >
+                  ॐ
+                </motion.div>
+
+                <p className="blessing">
+                  ॥ श्री गणेशाय नमः ॥
+                </p>
+
+                <p className="invitation-heading">
+                  THE DIVINE UNION
+                </p>
+
+                <div className="god-image">
+                  <img
+                    src="/shiva-parvati.png"
+                    alt="Lord Shiva and Goddess Parvati"
+                  />
+                </div>
+
+                <h1 className="cover-title">
+                  Wedding Invitation
+                </h1>
+
+                <p className="cover-subtitle">
+                  A Celebration of Eternal Love
+                </p>
+
+                <motion.button
+                  className="open-button"
+                  whileHover={{
+                    scale: 1.1,
+                    boxShadow: "0 0 30px gold",
+                  }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => setIsOpen(true)}
+                >
+                  ✨ Open Invitation ✨
+                </motion.button>
+
+              </div>
+            </motion.div>
+
+          ) : (
+
+            /* Inside Invitation */
+            <motion.div
+              key="inside"
+              className="inside-page"
+              initial={{ rotateY: 90, opacity: 0 }}
+              animate={{ rotateY: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+
+              <div className="inside-border">
+
+                <p className="blessing">
+                  With the blessings of Lord Shiva
+                  and Goddess Parvati
+                </p>
+
+                <h2 className="welcome">
+                  Together with their families
+                </h2>
+
+                <h1 className="couple-name">
+                  Divya
+                </h1>
+
+                <p className="and-symbol">&</p>
+
+                <h1 className="couple-name">
+                  Sandeep
+                </h1>
+
+                <p className="marriage-text">
+                  Invite you to celebrate their
+                  beautiful journey of love,
+                  commitment and togetherness.
+                </p>
+
+                <div className="divider">
+                  ❦ ✦ ❦
+                </div>
+
+                <h2 className="event-title">
+                  Wedding Ceremony
+                </h2>
+
+                <p className="event-details">
+                  📅 21 October 2026
+                </p>
+
+                <h2 className="event-title">
+                  Reception
+                </h2>
+
+                <p className="event-details">
+                  📅 22 October 2026
+                </p>
+
+                <p className="venue">
+                  Sri Vittala Rukumai Kalyana Mantapa
+                  <br />
+                  Ajjampura
+                </p>
+
+                <motion.a
+                  className="map-button"
+                  href="https://www.google.com/maps/search/?api=1&query=Sri+Vittala+Rukumai+Kalyana+Mantapa+Ajjampura"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  📍 View Location
+                </motion.a>
+
+                <motion.button
+                  className="rsvp-button"
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => setRsvp(true)}
+                >
+                  💌 RSVP
+                </motion.button>
+
+                {rsvp && (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="rsvp-message"
+                  >
+                    Thank you for your love
+                    and blessings! ❤️
+                  </motion.p>
+                )}
+
+                <p className="closing">
+                  Your presence will make our
+                  celebration truly special.
+                </p>
+
+                <button
+                  className="back-button"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setRsvp(false);
+                  }}
+                >
+                  ↩ Back to Cover
+                </button>
+
+              </div>
+            </motion.div>
+
+          )}
+
+        </AnimatePresence>
+      </motion.div>
+
+    </main>
+  );
+}
